@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 09:57:52 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/21 12:33:59 by ncolin           ###   ########.fr       */
+/*   Updated: 2019/10/23 20:06:55 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int				ft_atoi(const char *str)
 		str++;
 	if (*str == '+' || *str == '-')
 	{
-		sign = (*str == '-') ? 1 : 0;
+		sign = (*str == '-') ? -1 : 1;
 		str++;
 	}
 	while (*str >= '0' && *str <= '9')
@@ -47,7 +47,6 @@ int				ft_atoi(const char *str)
 		total = total * 10 + (*str - '0');
 		str++;
 	}
-	total = sign == 1 ? total *= -1 : total;
 	total_int = total;
-	return (total_int);
+	return (total_int * sign);
 }
