@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:29:58 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/21 13:23:35 by ncolin           ###   ########.fr       */
+/*   Updated: 2019/10/24 18:12:36 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,41 +19,28 @@
 **	au début et à la fin de la chaine de caractères.
 */
 
-static int		is_set(char c, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	while (*set)
-	{
-		if (*set++ == c)
-			return (1);
-	}
-	return (0);
-}
+	size_t	start;
+	size_t	end;
 
-char			*ft_strtrim(char const *s1, char const *set)
-{
-	unsigned int	start;
-	char			*str;
-	size_t			len;
-	int				i;
-
-	if (!s1 || !set)
+	if(!s1 || !set)
 		return (NULL);
-	i = 0;
-	while (is_set(s1[i], set))
-		i++;
-	if (s1[i] == '\0')
+	start = 0;
+	while (s1[start])
 	{
-		if (!(str = (char *)malloc(sizeof(char) * 1)))
-			return (NULL);
-		str = "";
-		return (str);
+		if (ft_strchr(set, s1[start]) == NULL)
+			break ;
+		start++;
 	}
-	start = i;
-	i = ft_strlen(s1) - 1;
-	while (is_set(s1[i], set))
-		i--;
-	len = i - start + 1;
-	if (!(str = (char *)malloc(sizeof(char) * len)))
-		return (NULL);
-	return (str = ft_substr(s1, start, len));
+	end = ft_strlen(s1) - 1;
+	while (end > 0)
+	{
+		if (ft_strchr(set, s1[end]) == NULL)
+			break ;
+		end--;
+	}
+	if (start > end || ft_strlen(s1) == 0)
+		return (ft_substr(s1, 0, 0));
+	return (ft_substr(s1, start, (end - start + 1)));
 }

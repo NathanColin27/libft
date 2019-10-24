@@ -6,7 +6,7 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 15:55:29 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/21 16:20:23 by ncolin           ###   ########.fr       */
+/*   Updated: 2019/10/24 18:19:56 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list *last;
 
-	if (!new || !alst)
+	if (!alst)
 		return ;
 	last = ft_lstlast(*alst);
-	last->next = new;
+	if (last)
+		last->next = new;
+	else
+		*alst = new;
 }
