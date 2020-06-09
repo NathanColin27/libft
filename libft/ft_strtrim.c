@@ -6,11 +6,11 @@
 /*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 13:29:58 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/24 18:12:36 by ncolin           ###   ########.fr       */
+/*   Updated: 2019/10/24 20:10:04 by ncolin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 /*
 **	Alloue (avec malloc(3)) et retourne une copie de la
@@ -24,7 +24,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	start;
 	size_t	end;
 
-	if(!s1 || !set)
+	if (!s1 || !set)
 		return (NULL);
 	start = 0;
 	while (s1[start])

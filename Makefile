@@ -4,7 +4,7 @@ CCFLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
 
-SRC = 	libft/ft_atoi.c \
+SRC =  	libft/ft_atoi.c \
 		libft/ft_bzero.c \
 		libft/ft_isalnum.c \
 		libft/ft_isalpha.c \
@@ -37,38 +37,34 @@ SRC = 	libft/ft_atoi.c \
 		libft/ft_split.c \
 		libft/ft_substr.c \
 		libft/ft_strtrim.c \
-		libft/ft_tolower.c\
+		libft/ft_tolower.c \
 		libft/ft_lstadd_back_bonus.c \
 		libft/ft_lstadd_front_bonus.c  \
 		libft/ft_lstiter_bonus.c \
 		libft/ft_lstlast_bonus.c \
 		libft/ft_lstnew_bonus.c \
 		libft/ft_lstsize_bonus.c \
-		##GNL##
-		
+		\
+		gnl/get_next_line.c \
+		gnl/get_next_line_utils.c
 
 OBJ = $(SRC:.c=.o)
 
-OBJBONUS = $(BONUS:.c=.o)
-
 all: $(NAME)
 
-$(NAME): $(OBJ) libft.h
+$(NAME): $(OBJ) includes/libft.h
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -c -o $@ $<
+	$(CC) $(CCFLAGS) -I includes/ -c -o $@ $<
 
 clean:
-	rm -f $(OBJ) $(OBJBONUS)
+	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME) $(OBJBONUS)
+	rm -f $(NAME) 
 
 re: fclean all
 
-bonus: $(OBJBONUS)
-	ar rc $(NAME) $(OBJBONUS)
-
-so: $(OBJ) libft.h
+so: $(OBJ) includes/libft.h
 	$(CC) -shared -fPIC -Wl,-soname,libft.so -o libft.so $(OBJ)

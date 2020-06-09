@@ -17,12 +17,23 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <string.h>
+# include <limits.h>
 
 typedef struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
 }					t_list;
+
+
+
+/*  _     ___ ____  _____ _____ 
+** | |   |_ _| __ )|  ___|_   _|
+** | |    | ||  _ \| |_    | |  
+** | |___ | || |_) |  _|   | |  
+** |_____|___|____/|_|     |_|  
+*/                              
+
 
 /*
 **		char
@@ -127,5 +138,27 @@ t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(void *content);
 
 int					ft_lstsize(t_list *lst);
+
+/*
+**   ____ _____ _____   _   _ _______  _______   _     ___ _   _ _____ 
+**  / ___| ____|_   _| | \ | | ____\ \/ /_   _| | |   |_ _| \ | | ____|
+** | |  _|  _|   | |   |  \| |  _|  \  /  | |   | |    | ||  \| |  _|  
+** | |_| | |___  | |   | |\  | |___ /  \  | |   | |___ | || |\  | |___ 
+**  \____|_____| |_|   |_| \_|_____/_/\_\ |_|   |_____|___|_| \_|_____|                                                                  
+*/
+
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE	32
+# endif
+
+# ifndef OPEN_MAX
+#  define OPEN_MAX 10240
+# endif
+
+int		ft_del_tab(char **tab);
+int		get_next_line(int fd, char **line);
+
+
 
 #endif
