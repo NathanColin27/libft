@@ -3,27 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 09:55:45 by ncolin            #+#    #+#             */
-/*   Updated: 2019/11/25 15:06:23 by ncolin           ###   ########.fr       */
+/*   Updated: 2020/06/28 18:22:59 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-size_t		ft_strlen(const char *str)
-{
-	size_t total;
-
-	total = 0;
-	while (*str)
-	{
-		total++;
-		str++;
-	}
-	return (total);
-}
 
 char		*ft_substr(char *s, unsigned int start, size_t len)
 {

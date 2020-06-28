@@ -11,6 +11,7 @@ SRC =  	libft/ft_atoi.c \
 		libft/ft_isascii.c \
 		libft/ft_isdigit.c \
 		libft/ft_isprint.c \
+		libft/ft_isspace.c \
 		libft/ft_memccpy.c \
 		libft/ft_memchr.c \
 		libft/ft_memcmp.c \
@@ -19,6 +20,7 @@ SRC =  	libft/ft_atoi.c \
 		libft/ft_memmove.c \
 		libft/ft_memset.c \
 		libft/ft_strchr.c \
+		libft/ft_strcpy.c \
 		libft/ft_putendl_fd.c \
 		libft/ft_strdup.c  \
 		libft/ft_toupper.c \

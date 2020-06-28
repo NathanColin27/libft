@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 16:43:23 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/24 18:30:30 by ncolin           ###   ########.fr       */
+/*   Updated: 2020/06/28 18:12:01 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int					ft_tolower(int c);
 
 int					ft_toupper(int c);
 
+int 				ft_isspace(int c);
 /*
 ** string
 */
@@ -60,6 +61,8 @@ int					ft_toupper(int c);
 char				**ft_split(char const *str, char sep);
 
 char				*ft_strchr(char const *str, int c);
+
+char    			*ft_strcpy (char *dest, const char *src);
 
 char				*ft_strdup(const char *s1);
 

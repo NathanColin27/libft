@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ncolin <ncolin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 09:57:52 by ncolin            #+#    #+#             */
-/*   Updated: 2019/10/24 11:50:53 by ncolin           ###   ########.fr       */
+/*   Updated: 2020/06/28 17:40:14 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 */
 
 #define MAXLONG 9223372036854775807
-
-static int		ft_isspace(int c)
-{
-	return (c == '\t' || c == '\n' ||
-		c == '\v' || c == '\f' || c == '\r' || c == ' ' ? 1 : 0);
-}
 
 int				ft_atoi(const char *str)
 {
