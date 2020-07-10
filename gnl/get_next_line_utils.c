@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 09:55:45 by ncolin            #+#    #+#             */
-/*   Updated: 2020/06/28 18:22:59 by nathan           ###   ########.fr       */
+/*   Updated: 2020/07/03 19:50:47 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,26 +29,6 @@ char		*ft_substr(char *s, unsigned int start, size_t len)
 		result[i] = '\0';
 	}
 	return (result);
-}
-
-char		*ft_strjoin(char const *s1, char const *s2)
-{
-	char	*str;
-	int		total;
-	int		i;
-
-	i = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	total = ft_strlen(s1) + ft_strlen(s2) + 1;
-	if (!(str = (char*)malloc(total * sizeof(char))))
-		return (NULL);
-	while (*s1)
-		str[i++] = *s1++;
-	while (*s2)
-		str[i++] = *s2++;
-	str[i] = '\0';
-	return (str);
 }
 
 char		*ft_strchr(char const *str, int c)
