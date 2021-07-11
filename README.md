@@ -4,6 +4,7 @@
 First project at [19 Coding school](https://www.s19.be)
 
 The goal is to recreate a library of useful C functions.
+
 **Function list :**
 
 
